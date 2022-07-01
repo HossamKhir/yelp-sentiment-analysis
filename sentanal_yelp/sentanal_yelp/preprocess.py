@@ -16,19 +16,20 @@ def preprocess(doc: str, **kwargs) -> str:
     then stopwords are removed, then the resulting string is tokenised,
     lowercased, then lemmatised
 
-    Parameters:
-    -----------
-    doc: str
+    Parameters
+    ----------
+    doc: str :
         the string document to be processed
-    kwargs: dict
+    **kwargs :
         keyword arguments to be used with
         `gensim.parsing.preprocessing.simple_preprocess`, and with `spacy`'s
         nlp function
 
-    Returns:
-    --------
-    out: str
+    Returns
+    -------
+    out : str
         the processed string, all lowercased, no stop words included
+
     """
     # remove any hyperlinks
     doc_processed = re.sub(REGEX_URL, "", doc)
